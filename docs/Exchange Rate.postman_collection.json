@@ -1,0 +1,124 @@
+{
+	"info": {
+		"_postman_id": "4c28c131-a81e-4be1-be34-e472c1fda80e",
+		"name": "Exchange Rate",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Find All",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6ImV4Y2hhbmdlLXJhdGUtZmluZC1hbGwsZXhjaGFuZ2UtcmF0ZS1vcGVyYXRpb24sZXhjaGFuZ2UtcmF0ZS1zYXZlIiwiaWF0IjoxNjEyOTI5NjIyLCJleHAiOjE2MTI5MzAyMjJ9.0s-g3wW9AVxAeTStk-p7EZHrJW0aYuVIrrdYSMKzuKU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8888/exchange-rate"
+			},
+			"response": []
+		},
+		{
+			"name": "Save Exchange Rate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6ImV4Y2hhbmdlLXJhdGUtZmluZC1hbGwsZXhjaGFuZ2UtcmF0ZS1vcGVyYXRpb24sZXhjaGFuZ2UtcmF0ZS1zYXZlIiwiaWF0IjoxNTk4MjIzNDIwLCJleHAiOjE1OTgyMjM0ODB9.2BFf6XfeXC5z2tnc2gTkiR97uK0iqEr3GrW3pjFMBGs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"sourceCurrency\": \"EUR\",\n    \"targetCurrency\": \"PEN\",\n    \"rate\": 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8888/exchange-rate"
+			},
+			"response": []
+		},
+		{
+			"name": "Get JWT",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8888/get-jwt?roles=exchange-rate-find-all,exchange-rate-operation,exchange-rate-save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"get-jwt"
+					],
+					"query": [
+						{
+							"key": "roles",
+							"value": "exchange-rate-find-all,exchange-rate-operation,exchange-rate-save"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Exchange Rate Operation",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6ImV4Y2hhbmdlLXJhdGUtZmluZC1hbGwsZXhjaGFuZ2UtcmF0ZS1vcGVyYXRpb24sZXhjaGFuZ2UtcmF0ZS1zYXZlIiwiaWF0IjoxNjEyOTM2MjQ4LCJleHAiOjE2MTI5MzY4NDh9.awTbVLg8SXa58TPTwD8CAlfAkpf8Q2K41NfRRnrGXpc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8888/exchange-rate/10/PEN/EUR"
+			},
+			"response": []
+		}
+	]
+}
